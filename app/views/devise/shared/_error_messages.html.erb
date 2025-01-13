@@ -1,0 +1,20 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation" class="alert alert-error shadow-lg px-6 flex flex-col items-start my-2 gap-1">
+    <strong class="text-md font-medium">Please fix the following errors</strong>
+    <ul class="text-sm ml-4 list-disc list-inside block w-full">
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if notice.present? %>
+  <div class="alert alert-success shadow-lg px-6 my-2">
+    <%= notice %>
+  </div>
+<% end %>
+<% if alert.present? %>
+  <div class="alert alert-error shadow-lg px-6 my-2">
+    <%= alert %>
+  </div>
+<% end %>

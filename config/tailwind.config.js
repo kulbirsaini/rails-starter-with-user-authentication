@@ -15,8 +15,20 @@ module.exports = {
     },
   },
   plugins: [
+    require('daisyui'),
     // require('@tailwindcss/forms'),
     // require('@tailwindcss/typography'),
     // require('@tailwindcss/container-queries'),
-  ]
+  ],
+  // daisyUI config (optional)
+  daisyui: {
+    styled: true,
+    themes: ["emerald", "dark"],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dark",
+  },
 }

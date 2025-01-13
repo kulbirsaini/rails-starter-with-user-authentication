@@ -17,13 +17,14 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 16 } %>
+  username: <%= ENV["DATABASE_USER"] %>
+  password: <%= ENV["DATABASE_PASS"] %>
+  database: <%= ENV["DATABASE_NAME"] %>
 
 
 development:
   <<: *default
-  database: msd_rocketmoon_development
-
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
@@ -56,8 +57,6 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: msd_rocketmoon_test
-
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -81,9 +80,6 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: msd_rocketmoon_production
-    username: msd_rocketmoon
-    password: <%= ENV["MSD_ROCKETMOON_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: msd_rocketmoon_production_cache
