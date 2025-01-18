@@ -42,43 +42,6 @@
   .devise-auth .field_with_errors [type='week'] {
       @apply input input-accent input-bordered w-full max-w-sm;
   }
-
-  .indicator-item + .indicator-item {
-      @apply ml-1;
-  }
-
-  form.button_to {
-      @apply p-0 !important;
-  }
-
-  .disable-scrollbars {
-      @apply overflow-y-scroll;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  }
-  .disable-scrollbars::-webkit-scrollbar { /* WebKit */
-      @apply w-0 h-0;
-  }
-
-  .steps .step {
-      @apply pointer-events-none;
-  }
-
-  .steps .step::after {
-      @apply cursor-pointer pointer-events-auto;
-  }
-
-  .steps .centered-content[data-content]::after {
-      @apply inline-block;
-  }
-
-  .tooltip:hover:before {
-      @apply z-20;
-  }
-
-  .tooltip:before {
-      @apply max-w-max;
-  }
 }
 
 .field_with_errors {
